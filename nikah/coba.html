@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Halaman Loading / Animasi -->
+<div id="loading-screen">
+    <div class="loader"></div>
+    <h2>Memuat Undangan...</h2>
+</div>
+
+<!-- Foto Pengantin dan Nama -->
+<div id="couple-photo">
+    <img src="images.jpg" alt="Foto Pengantin" />
+    <h2>Sarah & William</h2>
+</div>
+
+<!-- Kata Pengantar -->
+<div id="welcome-message">
+    <h3>Bismillahirrahmanirrahim</h3>
+    <p>Dengan segala kerendahan hati, kami mengundang Anda untuk hadir dalam momen spesial kami.</p>
+</div>
+
+<!-- Ayat Tentang Pernikahan -->
+<div id="wedding-verse">
+    <h4>Surah Ar-Rum (21)</h4>
+    <p>وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَرَحْمَةً إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</p>
+    <p>Artinya: "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan pasangan untuk kalian dari jenis kalian sendiri agar kalian merasa tentram kepadanya, dan Dia menjadikan di antara kalian rasa kasih sayang dan belas kasihan." (Q.S. Ar-Rum: 21)</p>
+</div>
+
+<!-- Foto dan Kata-Kata Tentang Kami -->
+<div id="about-us">
+    <img src="images.jpg" alt="Foto Pengantin" />
+    <p>Sarah dan William bertemu pada tahun 2015 dan perjalanan cinta mereka berkembang dengan penuh kebahagiaan dan rasa syukur. Hari ini, mereka siap untuk memulai babak baru dalam hidup mereka bersama.</p>
+</div>
+
+<!-- Deskripsi Keluarga -->
+<div class="family-description">
+    <h3>Deskripsi Keluarga</h3>
+    <p><strong>Sarah</strong> adalah putri dari Bapak Sudirman dan Ibu Nela, yang selalu memberikan dukungan dan cinta tanpa batas. Mereka berdua merupakan orang tua yang penuh kasih dan bijaksana.</p>
+    <p><strong>William</strong> adalah putra dari Bapak Arman dan Ibu Siti, yang dengan penuh kebanggaan telah membimbing dan mendukungnya selama hidup. Keluarga besar kami merasa sangat berbahagia dapat mengundang Anda pada hari yang penuh makna ini.</p>
+</div>
+
+<!-- Detail Acara -->
+<div id="event-details">
+    <h3>Detail Acara</h3>
+    <p><strong>Tanggal:</strong> 10 Maret 2025</p>
+    <p><strong>Waktu:</strong> 09:00 WIB - Akad Nikah</p>
+    <p><strong>Lokasi:</strong> Gedung Indah Jaya, Jakarta</p>
+</div>
+
+<!-- RSVP Kehadiran dan Ucapan -->
+<div id="rsvp-section">
+    <h3>RSVP Kehadiran</h3>
+    <form id="rsvp-form" onsubmit="return postRSVP(event)">
+        <label for="name">Nama Anda:</label>
+        <input type="text" id="name" name="name" placeholder="Masukkan Nama Anda" required>
+
+        <label for="attendance">Konfirmasi Kehadiran:</label>
+        <select id="attendance" name="attendance" required>
+            <option value="yes">Hadir</option>
+            <option value="no">Tidak Hadir</option>
+        </select>
+
+        <label for="message">Ucapan atau Doa untuk Pengantin:</label>
+        <textarea id="message" name="message" placeholder="Tulis ucapan atau doa Anda di sini..." rows="4"></textarea>
+
+        <button type="submit">Kirim RSVP</button>
+    </form>
+</div>
+
+<!-- Komentar -->
+<div id="comment-section">
+    <h3>Komentar dan Ucapan</h3>
+    <div id="comments-list">
+        <!-- Komentar yang sudah diposting akan muncul di sini -->
+    </div>
+</div>
+
+<!-- Berikan Hadiah -->
+<div id="gift-section">
+    <h3>Berikan Hadiah</h3>
+    <p>Jika Anda ingin memberikan hadiah, Anda bisa melakukannya melalui link berikut atau dengan memindai kode QR.</p>
+    <a href="link-hadiah.com">Link Hadiah</a>
+    <!-- Kode QR bisa disertakan di sini -->
+    <img src="qr-code-link.png" alt="QR Code Hadiah" />
+</div>
+
+<!-- Peta Lokasi -->
+<div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1332.8074711023435!2d106.79725943005585!3d-6.266057423675339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1991a57d0c3%3A0x65dc116c7e262d83!2sJl.%20Abdul%20Majid%20Raya%20No.38%2C%20RT.4%2FRW.5%2C%20Kemang%2C%20Cipete%20Sel.%2C%20Kec.%20Cilandak%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012410!5e1!3m2!1sid!2sid!4v1740309765455!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<!-- Foto dan Kata-Kata Pasangan -->
+<div id="couple-quote">
+    <img src="images.jpg" alt="Foto Pengantin" />
+    <p>"Kami berdua berjanji untuk selalu mencintai, mendukung, dan menghargai satu sama lain dalam setiap langkah hidup ini." - Sarah & William</p>
+</div>
+
+<!-- Galeri Pernikahan -->
+<div id="wedding-gallery">
+    <h3>Galeri Pernikahan</h3>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="images.jpg" alt="Foto Prewedding 1">
+        </div>
+        <div class="gallery-item">
+            <img src="images.jpg" alt="Foto Prewedding 2">
+        </div>
+        <div class="gallery-item">
+            <img src="images.jpg" alt="Foto Prewedding 3">
+        </div>
+        <div class="gallery-item">
+            <img src="images.jpg" alt="Foto Prewedding 4">
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>Terima kasih atas kehadiran Anda!</p>
+    <p>RSVP sebelum <strong>5 Maret 2025</strong></p>
+</div>
+
+<audio id="wedding-song" src="Tempted_by_The_Hazelnuts.mp3" muted autoplay></audio>
+<button onclick="unmuteAudio()">Unmute</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>

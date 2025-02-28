@@ -1,0 +1,217 @@
+body {
+    font-family: 'Madimi one';
+    background-color: #1f1f1f;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+/* Keyframes untuk efek fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 40px;
+    background: rgba(255, 255, 255, 0); /* Transparent background */
+    padding: 10px 20px 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 1200px; /* Lebar maksimal header */
+    margin: 0 auto; /* Memberikan jarak otomatis di kiri dan kanan */
+}
+.brand, .page-name {
+    font-size: 24px;
+    color: white;
+}
+
+/* Menu Ikon (Hamburger) */
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    flex: 0 0 auto; /* Tidak berubah ukuran */
+    color: white;
+}
+
+/* Nama Perusahaan */
+.brand {
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1; /* Membuatnya fleksibel agar tetap di tengah */
+}
+
+/* Nama Halaman */
+.page-name {
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: bold;
+    text-align: right;
+    flex: 0 0 auto; /* Tidak berubah ukuran */
+}
+
+/* Menu Dropdown */
+.menu {
+    position: absolute;
+    top: 60px; /* Sesuaikan dengan tinggi header */
+    left: 0;
+    width: 250px; /* Tentukan lebar dropdown */
+    background: rgba(0, 0, 0, 0.9);
+    text-align: left;
+    visibility: hidden; /* Menyembunyikan menu saat tidak aktif */
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+    z-index: 100; /* Menjaga agar menu berada di atas elemen lain */
+}
+
+.menu.active {
+    visibility: visible; /* Menampilkan menu saat aktif */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animasi untuk item menu */
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 15px;
+    opacity: 0; /* Awalnya tersembunyi */
+    transform: translateX(-50px); /* Mulai sedikit dari kiri */
+    animation: slideIn 0.5s forwards;
+    animation-delay: var(--delay); /* Menggunakan delay untuk setiap item menu */
+}
+
+/* Link menu */
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: block;
+    transition: background 0.3s ease, transform 0.2s ease, color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+    color: #f0f0f0;
+}
+
+/* Keyframes untuk animasi slide-in dari kiri */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px); /* Mulai dari kiri */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Posisi normal */
+    }
+}
+
+/* Efek hover untuk seluruh menu */
+.menu:hover {
+    background: rgba(0, 0, 0, 0.95);
+}
+
+.menu-icon {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+    z-index: 200; /* Pastikan tombol menu di atas menu */
+}
+
+.menu-icon:hover {
+    background-color: #555;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    .menu-icon, .brand, .page-name {
+        font-size: 16px;
+    }
+
+    .menu {
+        width: 200px;
+    }
+}
+
+
+
+/* Kontainer untuk lingkaran transisi */
+.transition-circle {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #205aa9 40%, #252525 100%);
+    z-index: 100;
+    opacity: 0;
+}
+.kata-awal{
+    width: 100%;
+    height: 100vh;
+    background-color: #333; /* Warna abu-abu */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.kata-awal h1{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 50px;
+    color: white; /* Warna teks putih */
+    text-align: center;
+    margin-bottom: 5px; 
+}
+.kata-awal p {
+    display:flex;
+    justify-content: center;
+    font-size: 24px;
+    color: white; /* Warna teks putih */
+    text-align: center;
+    font-family: 'Madimi One', sans-serif;
+    margin: 0
+}
+
+
+.kata-sambutan {
+    background-color: #ccc; /* Warna abu-abu */
+    padding: 50px 0; /* Tambahkan padding agar area abu-abu lebih besar */
+    text-align: center; /* Pusatkan gambar */
+}
+
+.kata-sambutan img {
+    max-width: 100%; /* Agar gambar tidak terlalu besar */
+    height: auto;
+    display: block;
+    margin: 20px auto 0; /* Beri jarak antara background dan gambar */
+}

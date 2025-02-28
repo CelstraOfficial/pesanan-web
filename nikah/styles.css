@@ -1,0 +1,481 @@
+/* Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styles */
+body {
+    background-color: #f7f7f7;
+    color: #333;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Halaman Loading */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Foto Pengantin dan Nama */
+#couple-photo img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+#couple-photo h2 {
+    font-size: 30px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Kata Pengantar */
+#welcome-message h3 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-top: 20px;
+}
+
+#welcome-message p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Ayat Tentang Pernikahan */
+#wedding-verse h4 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-top: 20px;
+}
+
+#wedding-verse p {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+
+#wedding-verse em {
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+/* Foto dan Kata-Kata Tentang Kami */
+#about-us img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+#about-us p {
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Deskripsi Keluarga */
+.family-description {
+    margin: 30px 0;
+}
+
+.family-description h3 {
+    font-size: 28px;
+    color: #2c3e50;
+}
+
+.family-description p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Detail Acara */
+#event-details h3 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-top: 20px;
+}
+
+#event-details p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* RSVP Kehadiran */
+#rsvp-section {
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+#rsvp-section h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+/* Ayat tentang Pernikahan (Holy Verse) */
+.holy-verse {
+    margin-top: 40px;
+    font-size: 18px;
+    color: #333;
+}
+
+.holy-verse strong {
+    font-size: 24px;
+    color: #2c3e50;
+}
+
+/* Berikan Hadiah */
+#gift-section {
+    margin-top: 40px;
+}
+
+#gift-section a {
+    text-decoration: none;
+    color: #3498db;
+    font-size: 18px;
+}
+
+#gift-section a:hover {
+    text-decoration: underline;
+}
+
+/* Komentar */
+#comment-section {
+    margin-top: 30px;
+    text-align: center;
+    padding: 30px;
+    background-color: #d3d3d3;
+    box-shadow: #0000009f;
+}
+
+#comment-section h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.comment-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.comment-item h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #4CAF50;
+}
+
+.comment-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+.comment-item small {
+    font-size: 12px;
+    color: #888;
+}
+
+
+/* Peta Lokasi */
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    border: 5px;
+    margin-top: 40px;
+}
+
+/* Foto dan Kata-Kata Pasangan */
+#couple-quote {
+    margin-top: 40px;
+}
+
+#couple-quote img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+#couple-quote p {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Galeri Pernikahan */
+#wedding-gallery {
+    text-align: center;
+    padding: 30px;
+    background-color: #f8f8f8;
+    margin-top: 50px;
+}
+
+#wedding-gallery h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Audio and Button */
+audio {
+    display: none;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+
+/* Couple's Photo */
+#couple-photo img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#couple-photo h2 {
+    font-size: 36px;
+    color: #ff77a9; /* Soft pink */
+    margin-top: 10px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Welcome Message */
+#welcome-message h3 {
+    font-size: 28px;
+    color: #5f6368;
+    margin-top: 20px;
+}
+
+#welcome-message p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Wedding Verse */
+#wedding-verse h4 {
+    font-size: 24px;
+    color: #5f6368;
+    margin-top: 20px;
+}
+
+#wedding-verse p {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+
+#wedding-verse em {
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+/* RSVP Section */
+#rsvp-section {
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#rsvp-section h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+input, select, textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ff77a9;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff77a9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f06595;
+}
+
+/* Gift Section */
+#gift-section a {
+    text-decoration: none;
+    color: #3498db;
+    font-size: 18px;
+}
+
+#gift-section a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
