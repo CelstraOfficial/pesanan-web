@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Mengarahkan halaman setelah transisi selesai, delay 1 detik setelah animasi selesai
                 setTimeout(function () {
                     window.location.href = "home2.html"; // Ganti dengan URL tujuan setelah transisi selesai
-                }, 1000);  // Delay 1000ms setelah animasi selesai
+                }, 300);// Delay 1000ms setelah animasi selesai
             }
         });
 
