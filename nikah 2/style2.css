@@ -1,10 +1,13 @@
 body {
-    font-family: 'Madimi one';
     background-color: #1f1f1f;
     margin: 0;
     padding: 0;
     opacity: 0;
     animation: fadeIn 1.5s ease-in-out forwards;
+    overflow:scroll
+}
+body::-webkit-scrollbar {
+    display: none; /* Menyembunyikan scrollbar */
 }
 
 /* Keyframes untuk efek fade-in */
@@ -23,20 +26,55 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 40px;
-    background: rgba(255, 255, 255, 0); /* Transparent background */
-    padding: 10px 20px 5px;
+    background: rgba(0, 0, 0, 0.3); /* Background transparan */
+    padding: 0px 20px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    max-width: 1200px; /* Lebar maksimal header */
-    margin: 0 auto; /* Memberikan jarak otomatis di kiri dan kanan */
+    width: 98%; /* Lebar penuh */
+    height: 70px; /* Menentukan tinggi header */
+    z-index: 1000; /* Menjaga header di atas elemen lain */
+    overflow: hidden; /* Menghindari elemen meluap */
 }
+
+/* Latar belakang dengan gradasi transparan dan blur pada seluruh header */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%); /* Gradasi penuh dari kiri ke kanan */
+    filter: blur(5px); /* Efek blur */
+    z-index: -1; /* Menjaga efek berada di belakang konten */
+}
+/* Font Import */
+@font-face {
+    font-family: 'Gill Sans Ultra Bold';
+    src: url('font/GILSANUB.TTF') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Styling untuk teks dalam header */
+header h1 {
+    font-family: 'Gill Sans Ultra Bold', sans-serif;
+    font-weight: bold;
+    color: white; /* Warna teks */
+    font-size: 30px; /* Ukuran teks */
+    text-transform: uppercase; /* Opsional: Mengubah teks jadi kapital */
+    margin: 0; /* Menghindari padding ekstra */
+}
+
+/* Brand & Page Name */
 .brand, .page-name {
     font-size: 24px;
     color: white;
+    font-family: 'Gill Sans Ultra Bold', sans-serif;
 }
+
 
 /* Menu Ikon (Hamburger) */
 .menu-icon {
@@ -65,10 +103,11 @@ header {
 /* Menu Dropdown */
 .menu {
     position: absolute;
-    top: 60px; /* Sesuaikan dengan tinggi header */
+    top: 65px; /* Sesuaikan dengan tinggi header */
     left: 0;
+    font-family: 'Gill Sans Ultra Bold', sans-serif;
     width: 250px; /* Tentukan lebar dropdown */
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.9); /* Warna latar belakang */
     text-align: left;
     visibility: hidden; /* Menyembunyikan menu saat tidak aktif */
     opacity: 0;
@@ -175,7 +214,8 @@ header {
     z-index: 100;
     opacity: 0;
 }
-.kata-awal{
+
+.kata-awal {
     width: 100%;
     height: 100vh;
     background-color: #333; /* Warna abu-abu */
@@ -183,27 +223,155 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
 
-}
-.kata-awal h1{
-    font-family: 'Bebas Neue', cursive;
-    font-size: 50px;
-    color: white; /* Warna teks putih */
+.kata-awal h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: white;
     text-align: center;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
+    opacity: 0;
+    transform: translateY(50px); /* Mulai dari bawah */
+    animation: slideUp 1s ease-out forwards;
 }
+
+/* Animasi untuk slideUp */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@font-face {
+    font-family: 'Framd'; /* Nama font yang akan digunakan */
+    src: url('font/framd.ttf') format('truetype'); /* Jalur ke file TTF */
+}
+
 .kata-awal p {
-    display:flex;
-    justify-content: center;
-    font-size: 24px;
-    color: white; /* Warna teks putih */
+    font-size: 60px;
+    color: white;
     text-align: center;
-    font-family: 'Madimi One', sans-serif;
-    margin: 0
+    font-family: 'Framd', sans-serif;
+    font-style: bold;
+    font-weight: bold;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(-50px); /* Mulai dari atas */
+    animation: slideDown 1s ease-out forwards;
+    animation-delay: 0.5s; /* Tunda muncul setelah h1 */
 }
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Responsive
+/* Mengatur responsivitas secara lebih luas */
+@media (max-width: 1200px) {
+    header {
+        padding: 0px 0px 0px;
+        max-width: 100%; /* Lebar header penuh pada layar lebih kecil */
+    }
+
+    .brand, .page-name {
+        font-size: clamp(16px, 3vw, 24px); /* Ukuran font responsif */
+    }
+
+    .menu {
+        width: 220px; /* Menyesuaikan lebar menu untuk perangkat lebih besar */
+    }
+
+    .menu-icon {
+        font-size: 28px; /* Menyesuaikan ukuran ikon menu untuk layar lebih besar */
+    }
+}
+
+/* Responsif untuk layar medium (tablet dan ukuran layar lebih kecil) */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+        flex-direction: column; /* Merubah layout header menjadi kolom */
+        align-items: center;
+    }
+
+    .brand, .page-name {
+        font-size: clamp(14px, 4vw, 20px); /* Ukuran font lebih kecil untuk tablet */
+        text-align: center; /* Center text untuk header */
+    }
+
+    .menu-icon {
+        font-size: 30px; /* Ukuran ikon lebih besar di layar kecil */
+        padding: 12px 20px; /* Padding tambahan agar mudah diklik */
+    }
+
+    .menu {
+        width: 100%; /* Menu mengambil lebar penuh pada layar kecil */
+    }
+
+    .menu ul li a {
+        font-size: 16px; /* Ukuran font menu lebih kecil */
+    }
+}
+
+/* Responsif untuk layar kecil (mobile) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Ukuran font umum lebih kecil */
+    }
+
+    header {
+        padding: 10px 15px; /* Mengurangi padding pada header untuk perangkat kecil */
+    }
+
+    .menu-icon {
+        font-size: 30px; /* Ikon menu tetap besar agar mudah diklik */
+    }
+
+    .brand, .page-name {
+        font-size: 18px; /* Menyesuaikan font agar lebih kecil pada perangkat mobile */
+    }
+
+    .menu {
+        width: 100%; /* Menu diatur agar memenuhi layar pada perangkat kecil */
+    }
+
+    .menu ul li a {
+        font-size: 14px; /* Ukuran font menu untuk perangkat mobile */
+    }
+
+    .transition-circle {
+        width: 120px; /* Memperkecil lingkaran transisi */
+        height: 120px;
+    }
+
+    .kata-awal h1 {
+        font-size: 30px; /* Ukuran font lebih kecil di perangkat mobile */
+    }
+
+    .kata-awal p {
+        font-size: 40px; /* Ukuran font lebih kecil di perangkat mobile */
+    }
+}
+
+
 
 
 .kata-sambutan {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
     background-color: #ccc; /* Warna abu-abu */
     padding: 50px 0; /* Tambahkan padding agar area abu-abu lebih besar */
     text-align: center; /* Pusatkan gambar */
